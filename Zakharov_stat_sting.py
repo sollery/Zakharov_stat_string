@@ -15,7 +15,7 @@ def input_validation(str_test):
 
 
 def fill_dict(str_test):
-    """Фукция провеяет ввод пользователя"""
+    """Фукция счиает кол-во повторений всех букв в строке и заполняет словарь"""
     dict_test = {}.fromkeys(str_test, 0)
     for let in str_test:
         dict_test[let] += 1
