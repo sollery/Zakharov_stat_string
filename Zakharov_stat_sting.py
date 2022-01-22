@@ -32,15 +32,22 @@ def print_all_stat(dict_test):
 def get_max_pair(dict_letters):
     """Функция создает словарь из максимально повторяющихся букв или буквы"""
     dict_max_repeat = {}
+    max_count = -1
+    for item in dict_letters:
+        temp = dict_letters[item]
+        if(temp >= max_count):
+            if(temp > max_count):
+                dict_max_repeat.clear()
+            dict_max_repeat[item] = temp
+            max_count = temp
     return dict_max_repeat
 
-
-def print_stat(length_dict):
+def print_stat(dict_max):
     """Функция печает букву или буквы с максимальным кол-во повторений строке"""
-    if length_dict > 1:
+    if len(dict_max) > 1:
         print(f'Несколько символов имеют одинаковое кол-во повторений:')
-    for i in dict_max_pair:
-        print(f'буква {i} повторялась максимальное кол-во раз: {dict_max_pair[i]}')
+    for i in dict_max:
+        print(f'буква {i} повторялась максимальное кол-во раз: {dict_max[i]}')
 
 
 str_letters = input("Введите строку состаящую только из английских букв: \n").lower()
@@ -48,4 +55,4 @@ str_user = input_validation(str_letters)
 dict_repeat = fill_dict(str_user)
 print_all_stat(dict_repeat)
 dict_max_pair = get_max_pair(dict_repeat)
-print_stat(len(dict_max_pair))
+print_stat(dict_max_pair)
