@@ -38,8 +38,8 @@ def get_max_pair(dict_letters):
         if(temp >= max_count):
             if(temp > max_count):
                 dict_max_repeat.clear()
+                max_count = temp
             dict_max_repeat[item] = temp
-            max_count = temp
     return dict_max_repeat
 
 def print_stat(dict_max):
